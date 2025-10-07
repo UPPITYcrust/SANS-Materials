@@ -22,3 +22,39 @@ Defending against these attacks
   NBT-NS, LLMNR, and mDNS be DISABLED
   SMB signing prevents relay attacks, use group policy (may result in reduced performance of 15%
   Use private VLANS (communication to router, no lateral communication)
+Phishing
+  Email bombing, lotsa spam then an IT support email (fake)
+  CAPTCHA, you think you are clicking a captcha, really its a powershell command being copied to your clipboard
+  MFA bombing, user gets fatigued from amount of MFA, eventually request is approved
+  Watering hole, compromised website, exploit kits
+Users in Phishing
+  Make sure users are aware of security posture/needs
+Email/Browser Phishing Security
+  SPF + DKIM provide an email check, if the mail fails, the DMARC steps in to apply policies for failed authentication
+  Sender Verification: suspicious anomalies bassed on sender's identity
+  Safe Links: Links are checked
+  Safe Attachments: Attachments are checked, multiple settings like dynamic delivery or monitor
+  Zero Hour auto Purge: retroactively detects and removes messages already in mailbox
+  Microsoft Defender for Endpoint SmartScreen: Real time reuptation checks, browser integration, configurable for Enterprise
+EvilGinx
+  Acts as reverse proxy for website
+  use U2F or FIDO2, needs username and password
+
+Windows Script Host: implemented in cscript.exe and wscript.exe, native execution of scripts
+  secure by, disable the WSH "HKCU\Software\Microsoft\Windows Script HOsting\Settings
+  Remove or block access to wscript.exe and cscript.exe (application control policies)
+  Disable global VBSscript or JScript support, deregister ActiveX components
+HTML Application (HTA): source code is dynamic (HTML) and one or more scripting languages supported by edge
+  Use mshta.exe to run (not constrained by browser security controls)
+  NCC Group created encrypted HTAs (Demiguise) Tries to evade AV detection, needs environmental key to run
+  SECURE by blocking mshta.exe through AppLocker/Windows Defender Application Control; Use Attack Surface Reduction (ASR) rules to prevent execution
+PREVENT QUICK CLICKING
+  1. Group Policy Editor
+  2. Select OU with computers to apply default associations
+  3. Create and edit new GPO
+  4. Go to Computer Config -> admin templates -> windows components -> file explorer
+  5. Select "Set a default associations configuration file."
+  6. Enable policy and specify UNC path to default association XML file (in SYSVOL)
+  7. Run gpupdate
+VBA: similar to .vbs, much more powerful
+  
