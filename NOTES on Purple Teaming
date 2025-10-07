@@ -1,0 +1,24 @@
+NTLM authentication
+  Responder uses thre main protocols to connect/authenticate: NetBIOS Name Server (NBT-NS), Link-Local Multicast Name Resolution (LLMNR), Multicast DNS (mDNS)
+  Responder used inside network lateral movement
+  Responder captures challenge/response 
+RPC methods to execute API calls on remote machine (ex. \\<ip>\share\file.txt)  #no special permissions needed
+  Coercer and PetitPotam for RPC
+Can coerce witih IPv6
+  Assign target system IPv6 addr in link-local range
+  MiTM6, will listen and reply to DHCPv6 messages 
+  W/O PARAMETERS, MiTM6 WILL TARGET EVERY SYSTEM AND DOMAIN ON NETWORK
+SMB Coerce
+  Embed hosted SMB share picture in word documet (ex. ctrl f9, {IMPORT\\\\<ip>\\image.jpeg})
+  responder listens on target IP
+  DISABLE OUBOUND SMB
+NTLM relays
+  Can sit in between and relay requests, challenge, and authentication
+Crack NTLM challenge/response
+  hashcat -m 5600 hash.txt password_list.txt -o cracked.txt
+  hash.txt is the hash to crack, the password list can be changed, possibly develop your own.
+  LONG COMPLEX PASSWORDS
+Defending against these attacks
+  NBT-NS, LLMNR, and mDNS be DISABLED
+  SMB signing prevents relay attacks, use group policy (may result in reduced performance of 15%
+  Use private VLANS (communication to router, no lateral communication)
