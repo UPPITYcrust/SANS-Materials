@@ -57,4 +57,9 @@ PREVENT QUICK CLICKING
   6. Enable policy and specify UNC path to default association XML file (in SYSVOL)
   7. Run gpupdate
 VBA: similar to .vbs, much more powerful
+  different engine than WSH, dialect of Visual Basic that is NOT VBScript
+  PROTECTION BY Turn on Protected View
+  Lots of Macro Restrictions can be configured
+  VBA MACRO SETTINGS Microsoft OFfice Trust Center
+USE MARK OF THE WEB TO EXAMINE ZONE IDENTIFIER
   
