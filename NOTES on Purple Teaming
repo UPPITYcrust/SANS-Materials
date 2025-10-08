@@ -62,4 +62,10 @@ VBA: similar to .vbs, much more powerful
   Lots of Macro Restrictions can be configured
   VBA MACRO SETTINGS Microsoft OFfice Trust Center
 USE MARK OF THE WEB TO EXAMINE ZONE IDENTIFIER
+App Locker (Under Local Group Policy Editor)
+  Needs Application Identity Service working
+  Can set Executable Rules
+  Has Event LOGS
+WDAC Complements AppLocker
+  a little more fine grained, but use them to complement each other
   
